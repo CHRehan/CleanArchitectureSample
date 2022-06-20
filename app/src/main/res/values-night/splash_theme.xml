@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- I will rather have a splash screen with animated drawable icon -->
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.CleanArchitectureSample</item>
+        <item name="windowSplashScreenBackground">@color/dark_green</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+    </style>
+</resources>
