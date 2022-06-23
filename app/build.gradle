@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'com.google.firebase.appdistribution'
 }
 
 android {
@@ -26,6 +27,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            firebaseAppDistribution {
+                groups = "Dev Testers"
+            }
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -92,6 +98,9 @@ dependencies {
     //Coil
     implementation 'io.coil-kt:coil-compose:2.1.0'
     implementation 'io.coil-kt:coil-svg:2.1.0'
+
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
 
     // Testing dependencies
     testImplementation "junit:junit:4.13.2"
