@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "618394242235",
+    "project_id": "clean-architecture-sampl-7545a",
+    "storage_bucket": "clean-architecture-sampl-7545a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618394242235:android:c1d1dd2052c049f1766d9e",
+        "android_client_info": {
+          "package_name": "com.clean.architecture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618394242235-ob66qoej95thgblmk66nsffje5pnrpoi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmbS1GssZwCqITtZqu0Kq7ndHHWQktBbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618394242235-ob66qoej95thgblmk66nsffje5pnrpoi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
