@@ -58,7 +58,7 @@ jobs:
       - name: Build & Upload On Firebase
         run: ./gradlew assembleDebug --stacktrace appDistributionUploadDebug
         env:
-          APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN}}
 
       - name: Upload On Github Artifacts
