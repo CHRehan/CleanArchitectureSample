@@ -1,15 +1,10 @@
 package com.clean.architecture.features.countries.data
 
-import com.clean.architecture.features.common.Resource
 import com.clean.architecture.features.countries.data.datasource.local.entities.CountryEntity
 import com.clean.architecture.features.countries.data.datasource.remote.CountryAPI
 import com.clean.architecture.features.countries.data.mapper.CountriesDataToDatabaseMapper
 import com.clean.architecture.features.countries.data.mapper.CountriesDataToDomainMapper
 import com.clean.architecture.features.countries.data.mapper.CountriesDatabaseToDomainMapper
-import com.clean.architecture.features.countries.data.model.CountryDataModel
-import com.clean.architecture.features.countries.data.model.CurrencyDetail
-import com.clean.architecture.features.countries.data.model.Flags
-import com.clean.architecture.features.countries.data.model.Name
 import com.clean.architecture.features.countries.data.repository.CountriesDataRepository
 import com.clean.architecture.features.countries.domain.datasource.db.CountryDao
 import com.clean.architecture.features.countries.domain.model.CountryModel
@@ -73,37 +68,6 @@ class CountriesDataRepositoryTest {
         startOfWeek = startOfWeek
     )
 
-    private fun getLanguagesHashMap(): HashMap<String, String>? {
-        val hashmap: HashMap<String, String>? = HashMap()
-        hashmap?.put("en", "English")
-        hashmap?.put("ur", "Urdu")
-        return hashmap
-    }
-
-    private fun getCurrencyHashMap(): HashMap<String, CurrencyDetail>? {
-        val hashmap: HashMap<String, CurrencyDetail>? = HashMap()
-        hashmap?.put("PKR", CurrencyDetail("Pakistani rupee", "₨"))
-        return hashmap
-    }
-
-    private val countryData = CountryDataModel(
-        name = Name(
-            common = commonName,
-            official = officialName
-        ),
-        unMember = unMember,
-        capital = listOf(capitals),
-        region = region,
-        subregion = subregion,
-        languages = getLanguagesHashMap(),
-        currencies = getCurrencyHashMap(),
-        population = population,
-        timezones = listOf(timezone),
-        continents = listOf(continent),
-        flags = Flags(flagSVG),
-        startOfWeek = startOfWeek
-    )
-
     @Mock
     lateinit var countryAPI: CountryAPI
 
@@ -137,16 +101,7 @@ class CountriesDataRepositoryTest {
             // Given
             val expectedResult = listOf(country)
 
-            given(countryAPI.getAllCountries())
-                .willReturn(listOf(countryData))
-
             given(countryDao.getCountries())
-                .willReturn(listOf(countryEntity))
-
-            given(countriesDataToDomainMapper.toDomain(listOf(countryData)))
-                .willReturn(listOf(country))
-
-            given(countriesDataToDatabaseMapper.toDatabase(listOf(countryData)))
                 .willReturn(listOf(countryEntity))
 
             given(countriesDatabaseToDomainMapper.toDomain(listOf(countryEntity)))
