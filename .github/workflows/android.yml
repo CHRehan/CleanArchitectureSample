@@ -7,43 +7,43 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
-    name: Lint Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the code
-        uses: actions/checkout@v2
-
-      - name: Run Debug Lint
-        run: ./gradlew lintDebug
-
-      - name: Upload html test report
-        uses: actions/upload-artifact@v2
-        with:
-          name: lint.html
-          path: app/build/reports/lint-results-debug.html
-
-  unit-test:
-    needs: [ lint ]
-    name: Unit Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the code
-        uses: actions/checkout@v2
-
-      - name: Run unit Test
-        run: echo Run Unit Test
-
-      - name: Run tests
-        run: ./gradlew test
-
-      - name: Upload test report
-        uses: actions/upload-artifact@v2
-        with:
-          name: unit_test_report
-          path: app/build/reports/tests/testDebugUnitTest/
+  #  lint:
+  #    name: Lint Check
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - name: Checkout the code
+  #        uses: actions/checkout@v2
+  #
+  #      - name: Run Debug Lint
+  #        run: ./gradlew lintDebug
+  #
+  #      - name: Upload html test report
+  #        uses: actions/upload-artifact@v2
+  #        with:
+  #          name: lint.html
+  #          path: app/build/reports/lint-results-debug.html
+  #
+  #  unit-test:
+  #    needs: [ lint ]
+  #    name: Unit Test
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - name: Checkout the code
+  #        uses: actions/checkout@v2
+  #
+  #      - name: Run unit Test
+  #        run: echo Run Unit Test
+  #
+  #      - name: Run tests
+  #        run: ./gradlew test
+  #
+  #      - name: Upload test report
+  #        uses: actions/upload-artifact@v2
+  #        with:
+  #          name: unit_test_report
+  #          path: app/build/reports/tests/testDebugUnitTest/
   package:
-    needs: [ unit-test ]
+    #    needs: [ unit-test ]
     name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
@@ -58,7 +58,6 @@ jobs:
       - name: Build & Upload On Firebase
         run: ./gradlew assembleDebug --stacktrace appDistributionUploadDebug
         env:
-          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN}}
 
       - name: Upload On Github Artifacts
