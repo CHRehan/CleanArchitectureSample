@@ -6,6 +6,8 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'com.google.firebase.appdistribution'
+    id 'com.google.gms.google-services'
+
 }
 
 android {
