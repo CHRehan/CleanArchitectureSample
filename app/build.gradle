@@ -29,11 +29,6 @@ android {
     }
 
     buildTypes {
-        distribution {
-            firebaseAppDistribution {
-                serviceCredentialsFile = "${rootDir.path}/google-sevice.json"
-            }
-        }
 
         debug {
             firebaseAppDistribution {
