@@ -71,7 +71,7 @@ jobs:
           name: unit_test_report
           path: app/build/reports/tests/testDebugUnitTest/
   package:
-    needs: [ unit-test ]
+    #    needs: [ unit-test ]
     name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
@@ -86,7 +86,6 @@ jobs:
       - name: Build & Upload On Firebase
         run: ./gradlew assembleDebug --stacktrace appDistributionUploadDebug
         env:
-          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN}}
 
       - name: Upload On Github Artifacts
