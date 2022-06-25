@@ -33,7 +33,7 @@ android {
         debug {
             firebaseAppDistribution {
                 releaseNotes="Debug build may contain some issues"
-                groups = "Dev Testers"
+                groups = "testers"
             }
         }
         release {
