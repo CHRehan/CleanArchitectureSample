@@ -24,10 +24,8 @@ Countries use case
 Built with [Jetpack Compose.](https://developer.android.com/jetpack/compose)
 
 ## Language
-Written using Kotlin
+Written using Kotlin and formatting with [Ktlint](https://ktlint.github.io/)
 
-## Language
-Code Formatting with [Ktlint](https://ktlint.github.io/)
 
 ## Testing
 - #### Unit Testing
