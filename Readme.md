@@ -26,6 +26,9 @@ Built with [Jetpack Compose.](https://developer.android.com/jetpack/compose)
 ## Language
 Written using Kotlin
 
+## Language
+Code Formatting with [Ktlint](https://ktlint.github.io/)
+
 ## Testing
 - #### Unit Testing
   - Yes
@@ -46,4 +49,4 @@ Written using Kotlin
 - #### CI 
   - With Github actions
 - #### CD
-  - N/A
+  - N/A (Will do this with Firebase App Distribution)
