@@ -26,6 +26,9 @@ Built with [Jetpack Compose.](https://developer.android.com/jetpack/compose)
 ## Language
 Written using Kotlin
 
+## Language
+Code Formatting with [Ktlint](https://ktlint.github.io/)
+
 ## Testing
 - #### Unit Testing
   - Yes
