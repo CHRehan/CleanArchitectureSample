@@ -46,4 +46,4 @@ Written using Kotlin
 - #### CI 
   - With Github actions
 - #### CD
-  - With Firebase App Distribution
+  - N/A (Will do this with Firebase App Distribution)
