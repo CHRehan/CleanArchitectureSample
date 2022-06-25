@@ -85,8 +85,11 @@ jobs:
 
       - name: Build & Upload On Firebase
         run: ./gradlew assembleDebug --stacktrace appDistributionUploadDebug
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN}}
+      with:
+        appId: ${{ secrets.FIREBASE_APP_ID}}
+        token: ${{ secrets.FIREBASE_TOKEN}}
+        groups: testers
+        file: app/build/outputs/apk/debug/app-debug.apk
 
       - name: Upload On Github Artifacts
         uses: actions/upload-artifact@v2
