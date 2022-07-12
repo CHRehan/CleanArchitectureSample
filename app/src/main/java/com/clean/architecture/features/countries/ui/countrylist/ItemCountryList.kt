@@ -18,12 +18,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
 import coil.request.CachePolicy
 import coil.request.ImageRequest
+import com.clean.architecture.R
 import com.clean.architecture.features.countries.domain.model.CountryModel
+import com.clean.architecture.utils.TestTags.ITEM_COUNTRY_LIST
 
 /**
  * Created by Rehan Sarwar on 11/06/2022.
@@ -38,7 +43,8 @@ fun ItemCountryList(country: CountryModel, onClick: () -> Unit) {
             .fillMaxWidth()
             .wrapContentHeight()
             .padding(vertical = 8.dp)
-            .clickable { onClick.invoke() },
+            .clickable { onClick.invoke() }
+            .testTag(ITEM_COUNTRY_LIST),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         val imageRequest = ImageRequest.Builder(context)
@@ -54,7 +60,8 @@ fun ItemCountryList(country: CountryModel, onClick: () -> Unit) {
             contentDescription = country.commonName,
             modifier = Modifier
                 .size(60.dp)
-                .clip(CircleShape),
+                .clip(CircleShape)
+                .semantics { },
             contentScale = ContentScale.FillBounds
         )
 
@@ -65,7 +72,7 @@ fun ItemCountryList(country: CountryModel, onClick: () -> Unit) {
                 color = MaterialTheme.colors.onBackground
             )
             Text(
-                text = "Capital: ${country.capitals}",
+                text = stringResource(R.string.capital_name, country.capitals),
                 style = MaterialTheme.typography.caption,
                 color = MaterialTheme.colors.onBackground.copy(alpha = 0.7f)
             )
