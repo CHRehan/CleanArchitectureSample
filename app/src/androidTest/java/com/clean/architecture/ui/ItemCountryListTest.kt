@@ -1,12 +1,8 @@
 package com.clean.architecture.ui
 
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.ui.test.assert
-import androidx.compose.ui.test.hasClickAction
-import androidx.compose.ui.test.hasText
+import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onNodeWithTag
-import androidx.compose.ui.test.performClick
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.clean.architecture.MainActivity
 import com.clean.architecture.R
