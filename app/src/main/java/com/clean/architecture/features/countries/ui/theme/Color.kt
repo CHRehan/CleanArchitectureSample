@@ -7,4 +7,3 @@ val GreenishBlack = Color(0xFF131B22)
 val White = Color(0xFFFFFFFF)
 
 val DarkGreen = Color(0xFF202C34)
-

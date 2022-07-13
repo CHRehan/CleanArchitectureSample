@@ -17,5 +17,5 @@ data class CountryModel(
     val timezones: String,
     val continents: String,
     val flagSVG: String,
-    val startOfWeek: String,
+    val startOfWeek: String
 ) : Parcelable

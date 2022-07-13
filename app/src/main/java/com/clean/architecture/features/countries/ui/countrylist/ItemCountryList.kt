@@ -45,7 +45,7 @@ fun ItemCountryList(country: CountryModel, onClick: () -> Unit) {
             .padding(vertical = 8.dp)
             .clickable { onClick.invoke() }
             .testTag(ITEM_COUNTRY_LIST),
-        verticalAlignment = Alignment.CenterVertically,
+        verticalAlignment = Alignment.CenterVertically
     ) {
         val imageRequest = ImageRequest.Builder(context)
             .data(country.flagSVG)

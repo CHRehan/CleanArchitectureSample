@@ -27,6 +27,6 @@ class CountriesDatabaseToDomainMapper :
         timezones = this.timezones,
         continents = this.continents,
         flagSVG = this.flagSVG,
-        startOfWeek = this.startOfWeek,
+        startOfWeek = this.startOfWeek
     )
 }

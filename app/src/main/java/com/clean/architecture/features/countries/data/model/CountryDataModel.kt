@@ -12,5 +12,5 @@ data class CountryDataModel(
     val timezones: List<String>?,
     val continents: List<String>?,
     val flags: Flags?,
-    val startOfWeek: String?,
+    val startOfWeek: String?
 )
