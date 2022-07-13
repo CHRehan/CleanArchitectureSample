@@ -35,7 +35,7 @@ import coil.request.ImageRequest
 import com.clean.architecture.R
 import com.clean.architecture.features.common.getCountryDetail
 import com.clean.architecture.features.countries.domain.model.CountryModel
-import com.clean.architecture.utils.TestTags
+import com.clean.architecture.utils.TestTags.COUNTRY_DETAIL
 
 /**
  * Created by Rehan Sarwar on 11/06/2022.
@@ -111,7 +111,7 @@ private fun FlagCard(flagSVG: String) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
-            .testTag(TestTags.COUNTRY_DETAIL),
+            .testTag(COUNTRY_DETAIL),
         shape = MaterialTheme.shapes.medium,
         elevation = 6.dp
     ) {
