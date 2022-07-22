@@ -3,11 +3,11 @@ package com.clean.architecture.features.countries.domain.usecase
 import com.clean.architecture.features.common.Resource
 import com.clean.architecture.features.countries.domain.model.CountryModel
 import com.clean.architecture.features.countries.domain.repository.CountriesRepository
-import java.io.IOException
-import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
+import java.io.IOException
+import javax.inject.Inject
 
 /**
  * Created by Rehan Sarwar on 07/06/2022.
