@@ -7,24 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
-    name: Lint Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the code
-        uses: actions/checkout@v2
-
-      - name: Run Debug Lint
-        run: ./gradlew lintDebug
-
-      - name: Upload html test report
-        uses: actions/upload-artifact@v2
-        with:
-          name: lint.html
-          path: app/build/reports/lint-results-debug.html
-
   unit-test:
-    needs: [ lint ]
     name: Unit Test
     runs-on: ubuntu-latest
     steps:
