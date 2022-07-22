@@ -1,7 +1,7 @@
 name: ktlint
 
 on:
-  pull_request: [ master,develop ]
+  pull_request:
     paths:
       - .github/workflows/ktlint.yml
       - 'src/**/*.kt'
