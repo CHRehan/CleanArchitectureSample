@@ -5,9 +5,9 @@ import com.clean.architecture.features.common.Resource
 import com.clean.architecture.features.countries.domain.usecase.CountriesUseCase
 import com.clean.architecture.features.countries.presentation.model.CountriesViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * Created by Rehan Sarwar on 07/06/2022.

@@ -29,7 +29,6 @@ fun CountryListScreen(
     navController: NavController,
     viewModel: CountriesViewModel = hiltViewModel()
 ) {
-
     val state = viewModel.viewState.value
 
     Scaffold(
