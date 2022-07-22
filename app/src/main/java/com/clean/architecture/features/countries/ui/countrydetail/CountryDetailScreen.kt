@@ -46,7 +46,6 @@ fun CountryDetailScreen(
     country: CountryModel?,
     navController: NavController
 ) {
-
     country?.let {
         Scaffold(
             topBar = {
