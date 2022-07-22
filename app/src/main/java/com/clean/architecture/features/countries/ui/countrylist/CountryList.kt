@@ -29,9 +29,9 @@ fun CountryList(
         items(list.size, { itemKey ->
             itemKey.toString()
         }, itemContent = { itemIndex ->
-            ItemCountryList(country = list[itemIndex]) {
-                onCountryClick(list[itemIndex])
-            }
-        })
+                ItemCountryList(country = list[itemIndex]) {
+                    onCountryClick(list[itemIndex])
+                }
+            })
     }
 }
