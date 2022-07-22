@@ -28,6 +28,6 @@ class CountriesDataToDatabaseMapper :
         timezones = this.timezones.orEmpty().joinToString(),
         continents = this.continents.orEmpty().joinToString(),
         flagSVG = this.flags?.svg.orEmpty(),
-        startOfWeek = this.startOfWeek.orEmpty(),
+        startOfWeek = this.startOfWeek.orEmpty()
     )
 }

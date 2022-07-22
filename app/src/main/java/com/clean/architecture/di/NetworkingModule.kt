@@ -30,7 +30,7 @@ class NetworkingModule {
     @Singleton
     @Provides
     fun provideOkHttpClient(
-        interceptor: HttpLoggingInterceptor,
+        interceptor: HttpLoggingInterceptor
     ) = OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS)
         .writeTimeout(30, TimeUnit.SECONDS)

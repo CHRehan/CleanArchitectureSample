@@ -29,7 +29,6 @@ fun CountryListScreen(
     navController: NavController,
     viewModel: CountriesViewModel = hiltViewModel()
 ) {
-
     val state = viewModel.viewState.value
 
     Scaffold(
@@ -37,7 +36,7 @@ fun CountryListScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = stringResource(id = R.string.app_name),
+                        text = stringResource(id = R.string.app_name)
                     )
                 },
                 backgroundColor = MaterialTheme.colors.primary

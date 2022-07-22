@@ -20,7 +20,7 @@ data class CountryEntity(
     val timezones: String,
     val continents: String,
     val flagSVG: String,
-    val startOfWeek: String,
+    val startOfWeek: String
 ) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
