@@ -18,7 +18,7 @@ import com.clean.architecture.utils.TestTags.COUNTRY_LIST
 @ExperimentalMaterialApi
 @Composable
 fun CountryList(
-    list: List<CountryModel>,
+    list: Collection<CountryModel>,
     onCountryClick: (CountryModel) -> Unit
 ) {
     LazyColumn(
@@ -29,8 +29,9 @@ fun CountryList(
         items(list.size, { itemKey ->
             itemKey.toString()
         }, itemContent = { itemIndex ->
-                ItemCountryList(country = list[itemIndex]) {
-                    onCountryClick(list[itemIndex])
+                val selectedItem = list.elementAt(itemIndex)
+                ItemCountryList(country = selectedItem) {
+                    onCountryClick(selectedItem)
                 }
             })
     }

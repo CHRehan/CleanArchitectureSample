@@ -19,7 +19,7 @@ class CountriesDataRepository @Inject constructor(
     private val countriesDataToDatabaseMapper: CountriesDataToDatabaseMapper,
     private val countriesDatabaseToDomainMapper: CountriesDatabaseToDomainMapper
 ) : CountriesRepository {
-    override suspend fun getAllCountries(): List<CountryModel> {
+    override suspend fun getAllCountries(): Collection<CountryModel> {
         val localData = countryDao.getCountries()
         return if (localData.isNullOrEmpty()) {
             val countiesApiData = countryAPI.getAllCountries()

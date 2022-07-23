@@ -72,7 +72,9 @@ class CountriesViewModelTest {
     fun `Given initial state when called init Then set viewState dataLoading sets true`() {
         runBlocking {
             val expectedResult = CountriesViewState(
-                isDataLoading = true
+                isDataLoading = true,
+                countries = emptyList(),
+                errorMessage = ""
             )
             // When
             val actualResult = classUnderTest.currentViewState()
@@ -85,16 +87,16 @@ class CountriesViewModelTest {
     @ExperimentalCoroutinesApi
     @Test
     fun `Given successfull usecase execution When called init Then update the view state with listOf countries`() {
-
         runTest {
             // Given
             given(countriesUseCase()).willReturn(
-                flowOf(Resource.Success<List<CountryModel>>(listOf(country)))
+                flowOf(Resource.Success<Collection<CountryModel>>(listOf(country)))
             )
             advanceUntilIdle()
             val expectedResult = CountriesViewState(
                 isDataLoading = false,
-                countries = listOf(country)
+                countries = listOf(country),
+                errorMessage = ""
             )
 
             // When
@@ -117,7 +119,7 @@ class CountriesViewModelTest {
         runTest {
             // Given
             given(countriesUseCase()).willReturn(
-                flowOf(Resource.Error<List<CountryModel>>("Something went wrong"))
+                flowOf(Resource.Error<Collection<CountryModel>>("Something went wrong"))
             )
             advanceUntilIdle()
 

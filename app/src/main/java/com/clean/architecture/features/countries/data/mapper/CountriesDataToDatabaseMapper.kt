@@ -8,8 +8,8 @@ import com.clean.architecture.features.countries.data.model.CountryDataModel
  * Created by Rehan Sarwar on 07/06/2022.
  */
 class CountriesDataToDatabaseMapper :
-    DataToDatabaseMapper<List<CountryDataModel>, List<CountryEntity>>() {
-    override fun map(input: List<CountryDataModel>) = input.map { countryData ->
+    DataToDatabaseMapper<Collection<CountryDataModel>, Collection<CountryEntity>>() {
+    override fun map(input: Collection<CountryDataModel>) = input.map { countryData ->
         countryData.toDatabase()
     }
 
