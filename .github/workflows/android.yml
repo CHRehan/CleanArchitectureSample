@@ -23,11 +23,3 @@ jobs:
         with:
           name: unit_test_report
           path: app/build/reports/tests/testDebugUnitTest/
-
-  ui-test:
-    name: UI Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Android Emulator
-        uses: vgaidarji/android-github-actions-emulator@v1.0.1
-
