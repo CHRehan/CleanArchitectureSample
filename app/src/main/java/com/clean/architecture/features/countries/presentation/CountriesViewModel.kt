@@ -4,8 +4,8 @@ import androidx.lifecycle.viewModelScope
 import com.clean.architecture.features.common.Resource
 import com.clean.architecture.features.countries.domain.usecase.CountriesUseCase
 import com.clean.architecture.features.countries.presentation.model.CountriesViewState
+import com.clean.architecture.features.countries.presentation.model.emptyViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,7 +17,7 @@ class CountriesViewModel @Inject constructor(
     private val countriesUseCase: CountriesUseCase
 ) : BaseViewModel<CountriesViewState>() {
 
-    override fun initialState() = CountriesViewState()
+    override fun initialState() = emptyViewState()
 
     init {
         getCountries()

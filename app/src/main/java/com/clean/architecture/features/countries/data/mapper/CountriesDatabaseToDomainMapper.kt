@@ -8,9 +8,9 @@ import com.clean.architecture.features.countries.domain.model.CountryModel
  * Created by Rehan Sarwar on 07/06/2022.
  */
 class CountriesDatabaseToDomainMapper :
-    DatabaseToDomainMapper<List<CountryEntity>, List<CountryModel>>() {
+    DatabaseToDomainMapper<Collection<CountryEntity>, Collection<CountryModel>>() {
 
-    override fun map(input: List<CountryEntity>) = input.map { countryEntity ->
+    override fun map(input: Collection<CountryEntity>) = input.map { countryEntity ->
         countryEntity.toDomain()
     }
 

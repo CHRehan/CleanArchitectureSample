@@ -12,7 +12,7 @@ import com.clean.architecture.features.countries.data.datasource.local.entities.
 @Dao
 interface CountryDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(countries: List<CountryEntity>)
+    suspend fun insertAll(countries: Collection<CountryEntity>)
 
     @Query("SELECT * FROM countries")
     suspend fun getCountries(): List<CountryEntity>?

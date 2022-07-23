@@ -68,7 +68,7 @@ class CountriesUseCaseTest {
             )
 
             // when
-            var actualResult: List<CountryModel>? = null
+            var actualResult: Collection<CountryModel>? = null
             classUnderTest().collect {
                 actualResult = it.data
             }

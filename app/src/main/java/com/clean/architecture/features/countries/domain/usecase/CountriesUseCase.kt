@@ -16,20 +16,20 @@ import javax.inject.Inject
 class CountriesUseCase @Inject constructor(
     private val countriesRepository: CountriesRepository
 ) {
-    operator fun invoke(): Flow<Resource<List<CountryModel>>> = flow {
+    operator fun invoke(): Flow<Resource<Collection<CountryModel>>> = flow {
         try {
             val countries = countriesRepository
                 .getAllCountries()
                 .sortedBy { country -> country.commonName }
-            emit(Resource.Success<List<CountryModel>>(countries))
+            emit(Resource.Success<Collection<CountryModel>>(countries))
         } catch (e: HttpException) {
             emit(
-                Resource.Error<List<CountryModel>>(
+                Resource.Error<Collection<CountryModel>>(
                     e.localizedMessage ?: "An unexpected error occured"
                 )
             )
         } catch (e: IOException) {
-            emit(Resource.Error<List<CountryModel>>("Couldn't reach the server. Check your internet connection"))
+            emit(Resource.Error<Collection<CountryModel>>("Couldn't reach the server. Check your internet connection"))
         }
     }
 }

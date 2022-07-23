@@ -8,8 +8,8 @@ import com.clean.architecture.features.countries.domain.model.CountryModel
  * Created by Rehan Sarwar on 07/06/2022.
  */
 class CountriesDataToDomainMapper :
-    DataToDomainMapper<List<CountryDataModel>, List<CountryModel>>() {
-    override fun map(input: List<CountryDataModel>) = input.map { countryDataModel ->
+    DataToDomainMapper<Collection<CountryDataModel>, Collection<CountryModel>>() {
+    override fun map(input: Collection<CountryDataModel>) = input.map { countryDataModel ->
         countryDataModel.toDomain()
     }
 
