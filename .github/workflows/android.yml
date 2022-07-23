@@ -26,7 +26,7 @@ jobs:
 
   ui-test:
     name: UI Test
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Android Emulator
         uses: vgaidarji/android-github-actions-emulator@v1.0.1
