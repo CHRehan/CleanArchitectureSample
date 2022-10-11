@@ -8,12 +8,16 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.clean.architecture.BaseUiTest
 import com.clean.architecture.MainActivity
 import com.clean.architecture.R
+import com.clean.architecture.countriesScreenRobot
 import com.clean.architecture.features.countries.domain.model.CountryModel
 import com.clean.architecture.features.countries.ui.countrylist.ItemCountryList
 import com.clean.architecture.features.countries.ui.theme.CleanArchitectureSampleTheme
 import com.clean.architecture.utils.TestTags.ITEM_COUNTRY_LIST
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -21,8 +25,9 @@ import org.junit.runner.RunWith
 /**
  * Created by Rehan Sarwar on 12/07/2022.
  */
+@HiltAndroidTest
 @RunWith(AndroidJUnit4::class)
-class ItemCountryListTest {
+class ItemCountryListTest : BaseUiTest() {
     private val country = CountryModel(
         commonName = "Australia",
         officialName = "Commonwealth of Australia",
@@ -39,18 +44,25 @@ class ItemCountryListTest {
         startOfWeek = "monday"
     )
 
-    @ExperimentalMaterialApi
-    @get:Rule
-    val composeTestRule = createAndroidComposeRule<MainActivity>()
+//    @ExperimentalMaterialApi
+//    @get:Rule
+//    val composeTestRule = createAndroidComposeRule<MainActivity>()
+//
+//    @get:Rule
+//    val hiltRule by lazy { HiltAndroidRule(this) }
 
     @ExperimentalMaterialApi
     @Test
     fun testCountryListItem() {
-        composeTestRule.setContent {
+        countriesScreenRobot(composeTestRule){
             CleanArchitectureSampleTheme {
                 ItemCountryList(country = country) {}
             }
         }
+
+//        composeTestRule.setContent {
+//
+//        }
         composeTestRule.apply {
             onNodeWithTag(ITEM_COUNTRY_LIST)
                 .assert(hasClickAction())
