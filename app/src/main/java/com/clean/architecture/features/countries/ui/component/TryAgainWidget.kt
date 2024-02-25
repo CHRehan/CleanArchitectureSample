@@ -1,7 +1,9 @@
 package com.clean.architecture.features.countries.ui.component
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -20,7 +22,8 @@ import com.clean.architecture.R
 fun TryAgainWidget(message: String?, onTryAgain: () -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier.fillMaxSize()
             .padding(50.dp)
             .clickable { onTryAgain.invoke() }
     ) {

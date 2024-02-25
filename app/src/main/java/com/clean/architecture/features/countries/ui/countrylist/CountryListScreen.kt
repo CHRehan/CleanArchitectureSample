@@ -43,7 +43,7 @@ fun CountryListScreen(
             )
         }
     ) {
-        CountryList(list = state.countries.toList()) { country ->
+        CountryList(list = state.countries) { country ->
             navController.currentBackStackEntry?.savedStateHandle?.set(COUNTRY_ID, country)
             navController.navigate(Screens.CountryDetail.route)
         }

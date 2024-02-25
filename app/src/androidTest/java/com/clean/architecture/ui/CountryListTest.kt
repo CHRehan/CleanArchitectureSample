@@ -4,19 +4,18 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.hasText
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onChildren
 import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.onLast
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.clean.architecture.MainActivity
+import com.clean.architecture.BaseUiTest
 import com.clean.architecture.R
 import com.clean.architecture.features.countries.domain.model.CountryModel
 import com.clean.architecture.features.countries.ui.countrylist.CountryList
 import com.clean.architecture.features.countries.ui.theme.CleanArchitectureSampleTheme
 import com.clean.architecture.utils.TestTags.COUNTRY_LIST
-import org.junit.Rule
+import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -24,7 +23,8 @@ import org.junit.runner.RunWith
  * Created by Rehan Sarwar on 16/06/2022.
  */
 @RunWith(AndroidJUnit4::class)
-class CountryListTest {
+@HiltAndroidTest
+class CountryListTest : BaseUiTest() {
 
     private val country1 = CountryModel(
         commonName = "Australia",
@@ -91,10 +91,6 @@ class CountryListTest {
     )
 
     private val countries = listOf(country1, country2, country3, country4)
-
-    @ExperimentalMaterialApi
-    @get:Rule
-    val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @ExperimentalMaterialApi
     @Test
